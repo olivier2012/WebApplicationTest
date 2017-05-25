@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<web-app xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+	 xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	 xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd"
+	 version="3.1">
+    <servlet>
+        <servlet-name>test</servlet-name>
+        <servlet-class>test.PageOne</servlet-class>
+    </servlet>
+    
+    <servlet-mapping>
+        <servlet-name>test</servlet-name>
+        <url-pattern>/page1</url-pattern>
+        <url-pattern>/whatever</url-pattern>
+        <url-pattern>/pageOne</url-pattern>
+        <url-pattern>/111</url-pattern>
+    </servlet-mapping>
+    
+    <servlet>
+        <servlet-name>two</servlet-name>
+        <servlet-class>test.PageTwo</servlet-class>
+    </servlet>
+    
+    <servlet-mapping>
+        <servlet-name>two</servlet-name>
+        <url-pattern>/page2</url-pattern>
+    </servlet-mapping>
+    
+    <servlet>
+        <servlet-name>changeBColor</servlet-name>
+        <servlet-class>test.changeBColor</servlet-class>
+    </servlet>
+    
+    <servlet-mapping>
+        <servlet-name>changeBColor</servlet-name>
+        <url-pattern>/changeBColor</url-pattern>
+    </servlet-mapping>
+    
+        <servlet>
+        <servlet-name>PageCalc</servlet-name>
+        <servlet-class>test.PageCalc</servlet-class>
+    </servlet>
+    
+    <servlet-mapping>
+        <servlet-name>PageCalc</servlet-name>
+        <url-pattern>/PageCalc</url-pattern>
+    </servlet-mapping>
+    
+    <servlet>
+        <servlet-name>PageFiles</servlet-name>
+        <servlet-class>test.PageFiles</servlet-class>
+    </servlet>
+    
+    <servlet-mapping>
+        <servlet-name>PageFiles</servlet-name>
+        <url-pattern>/PageFiles</url-pattern>
+    </servlet-mapping>
+    
+       <servlet>
+        <servlet-name>getParameterValue</servlet-name>
+        <servlet-class>test.getParameterValue</servlet-class>
+    </servlet>
+    
+    <servlet-mapping>
+        <servlet-name>getParameterValue</servlet-name>
+        <url-pattern>/getParameterValue</url-pattern>
+    </servlet-mapping>
+    
+           <servlet>
+        <servlet-name>file_folder</servlet-name>
+        <servlet-class>test.file_folder</servlet-class>
+    </servlet>
+    
+    <servlet-mapping>
+        <servlet-name>file_folder</servlet-name>
+        <url-pattern>/file_folder</url-pattern>
+    </servlet-mapping>
+    
+     <servlet>
+        <servlet-name>file_folder1</servlet-name>
+        <servlet-class>test.file_folder1</servlet-class>
+    </servlet>
+    
+    <servlet-mapping>
+        <servlet-name>file_folder1</servlet-name>
+        <url-pattern>/file_folder1</url-pattern>
+    </servlet-mapping>
+    
+        
+         <servlet>
+        <servlet-name>file_folder12</servlet-name>
+        <servlet-class>test.file_folder12</servlet-class>
+    </servlet>
+    
+    <servlet-mapping>
+        <servlet-name>file_folder12</servlet-name>
+        <url-pattern>/file_folder12</url-pattern>
+    </servlet-mapping>
+    
+    
+     <servlet>
+        <servlet-name>getParameterValue1</servlet-name>
+        <servlet-class>test.getParameterValue1</servlet-class>
+    </servlet>
+    
+    <servlet-mapping>
+        <servlet-name>getParameterValue1</servlet-name>
+        <url-pattern>/getParameterValue1</url-pattern>
+    </servlet-mapping>
+    
+    <servlet>
+        <servlet-name>getParameterName</servlet-name>
+        <servlet-class>test.getParameterName</servlet-class>
+    </servlet>
+    
+    <servlet-mapping>
+        <servlet-name>getParameterName</servlet-name>
+        <url-pattern>/getParameterName</url-pattern>
+    </servlet-mapping>
+    
+         <servlet>
+        <servlet-name>getParameterName1</servlet-name>
+        <servlet-class>test.getParameterName1</servlet-class>
+    </servlet>
+    
+    <servlet-mapping>
+        <servlet-name>getParameterName1</servlet-name>
+        <url-pattern>/getParameterName1</url-pattern>
+    </servlet-mapping>
+</web-app>

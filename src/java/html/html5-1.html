@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>HTML 5 </title>
+    </head>
+    <body>
+<h3>Student's data</h3>
+<form style="border: red solid 2px; padding: 2mm;" method="get" action="receiver.html">
+    Datetime-local:<input type="datetime-local" name="selDate" value="2017-04-04T01:00:01" 
+           max="2019-12-31T00:00:00" ><br/>
+    Date of exam:<input type="date" name="dateOfExam" value="2017-04-24"  max="2019-12-31" ><br/>
+    Time of exam :<input type="time" name="timeOfExam" value="04:05:00" ><br/>
+    
+    Grade from 0 to 100 :<input type="range" name="grade" min="0" max="100" value="10" ><br/>
+    extraClasses:<input type="number" name="extraClasses" min="1" max="5" value="3" ><br/>
+    e-mail:<input type="email" name="email" />
+    <input type="submit" value="Submit" />
+</form>
+
+</body>   
+
+</html>
