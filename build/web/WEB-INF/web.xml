@@ -128,4 +128,14 @@
         <servlet-name>getParameterName1</servlet-name>
         <url-pattern>/getParameterName1</url-pattern>
     </servlet-mapping>
+    
+     <servlet>
+        <servlet-name>getParameterName12</servlet-name>
+        <servlet-class>test.getParameterName12</servlet-class>
+    </servlet>
+    
+    <servlet-mapping>
+        <servlet-name>getParameterName12</servlet-name>
+        <url-pattern>/getParameterName12</url-pattern>
+    </servlet-mapping>
 </web-app>
