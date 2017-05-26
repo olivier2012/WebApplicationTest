@@ -17,7 +17,9 @@ public class PageCalc extends GenericServlet{
         int firPar = parseInt(req.getParameter("firPar"));
         int secPar = parseInt(req.getParameter("secPar"));
       String option = req.getParameter("option");
-    
+       String bgcol = getInitParameter("backgroundcolor");
+       String forecolor =  getInitParameter("forecolor");
+       pw.println("<body style='background-color:" + bgcol + "; color: " + forecolor + ";'>");
       if (option.equals("plus"))
       {pw.println("you input " + firPar + "  " +option + "  " + secPar + "  result : " + (firPar+secPar) );}
       else if (option.equals("min")){

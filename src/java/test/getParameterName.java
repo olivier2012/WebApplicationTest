@@ -15,7 +15,8 @@ public class getParameterName extends GenericServlet{
     public void service(ServletRequest req, ServletResponse resp) throws ServletException, IOException {
         resp.setContentType("text/html");
         PrintWriter pw = resp.getWriter( );                
-        pw.println("<table border='1' width='40%' >");
+        String border = getInitParameter("border");
+        pw.println("<table border=" +border +" width='40%' >");
         pw.println("<caption> All parameters with their  values</caption>");
         pw.println("<tr><th>Parameter</th><th>Value</th></tr>");
         Enumeration<String> paramNames = req.getParameterNames( );
