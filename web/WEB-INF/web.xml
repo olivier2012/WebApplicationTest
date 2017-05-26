@@ -148,7 +148,6 @@
         <param-name>backgroundcolor</param-name>
         <param-value>gold</param-value>
     </init-param>
-    
     <servlet>
         <servlet-name>SelectStudents</servlet-name>
         <servlet-class>test.SelectStudents</servlet-class>
@@ -156,5 +155,14 @@
     <servlet-mapping>
         <servlet-name>SelectStudents</servlet-name>
         <url-pattern>/selStudents</url-pattern>
+    </servlet-mapping>
+    
+        <servlet>
+        <servlet-name>Bookform</servlet-name>
+        <servlet-class>test.Bookform</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>Bookform</servlet-name>
+        <url-pattern>/bookform</url-pattern>
     </servlet-mapping>
 </web-app>

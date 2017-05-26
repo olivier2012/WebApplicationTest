@@ -16,8 +16,8 @@ public class Bookform extends  GenericServlet {
         PrintWriter pw = resp.getWriter();
         
         String connectionURL = getServletContext().getInitParameter("connect_string");
-        String fnameVal = req.getParameter("fname");
-        String lnameVal = req.getParameter("lname");
+        String fnameVal = req.getParameter("name");
+        String lnameVal = req.getParameter("author");
         fnameVal =  returnEmptyIfNull(fnameVal);
         lnameVal =  returnEmptyIfNull(lnameVal);
         String fnameInfo = " first name " + ( fnameVal.isEmpty() ? " - <u>any</u> " : " starts with \"" + fnameVal + "\"");
@@ -37,11 +37,11 @@ public class Bookform extends  GenericServlet {
             Connection con = DriverManager.getConnection(connectionURL);
             Statement stmt = con.createStatement();
         )
-        {  ResultSet rs =  stmt.executeQuery("SELECT * FROM T_Stud WHERE lname LIKE   '" +  lnameVal +
-                    "%'    AND     fname LIKE    '" + fnameVal  + "%'  ");
+        {  ResultSet rs =  stmt.executeQuery("SELECT * FROM books WHERE authors LIKE   '" +  lnameVal +
+                    "%'    AND     name LIKE    '" + fnameVal  + "%'  ");
             while( rs != null  &&  rs.next(  )  ){
-                   pw.println("<tr><td>" + rs.getString("fname") + "</td><td>" +
-                           rs.getString("lname") + "</td></tr>");
+                   pw.println("<tr><td>" + rs.getString("name") + "</td><td>" +
+                           rs.getString("authors") + "</td></tr>");
             }
         }
         catch(Exception e){
