@@ -1,0 +1,12 @@
+<style>
+    label {  padding-left: 5px;  padding-right: 50px; }
+</style>
+<h2>Select Books by name or Author</h2>
+<form action="http://localhost:8088/WebApplicationTest/bookform" method="get" 
+      style="border: blue solid 1mm; width: 30%; padding: 1.5mm">
+    <br/>
+    <label>Book name starts  with</label><input type="text" name="name"  /><br/><br/>
+    <label>Author starts  with</label><input type="text" name="author"  /><br/><br/>
+    <input type="reset" value="reset" style="background-color:red"/><br/>
+    <input type="submit" value="send" title="send to server" style="background-color:green"/>
+</form>
