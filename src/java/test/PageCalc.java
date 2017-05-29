@@ -1,7 +1,5 @@
 package test;
 
-import static com.sun.org.apache.xalan.internal.lib.ExsltDatetime.date;
-import static com.sun.org.apache.xalan.internal.lib.ExsltDatetime.date;
 import java.io.*;
 import static java.lang.Integer.parseInt;
 import java.util.Date;
@@ -27,7 +25,7 @@ public class PageCalc extends GenericServlet{
       else if(option.equals("pro")){
           pw.println("you input " + firPar + "  " +option + "  " + secPar + "  result : " + (firPar*secPar) );} 
       else if (option.equals("div")){
-          pw.println("you input " + firPar + "  " +option + "  " + secPar + "  result : " +(firPar/secPar) );}  
+          pw.println("you input " + firPar + "  " +option + "  " + secPar + "  result : " +((double)firPar/secPar) );}  
           
       //pw.println("<body style='color:"+tcolor+"; background-color:"+bcolor+";'>");
       

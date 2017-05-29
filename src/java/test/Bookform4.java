@@ -2,7 +2,7 @@ package test;
 import javax.servlet.*;
 import java.io.*;
 import java.sql.*;
-public class Bookform extends  GenericServlet {
+public class Bookform4 extends  GenericServlet {
      private String connectionURL ;   //field for storage of  DB  connection string
      
     public void init( )   {          //this method is used for one-time activities , it's called when servlet is initialized 
@@ -16,6 +16,8 @@ public class Bookform extends  GenericServlet {
         PrintWriter pw = resp.getWriter();
         
         String connectionURL = getServletContext().getInitParameter("connect_string");
+        String initAuthorvalue = getServletContext().getInitParameter("author");
+        
         String fnameVal = req.getParameter("name");
         String lnameVal = req.getParameter("author");
         fnameVal =  returnEmptyIfNull(fnameVal);
@@ -24,11 +26,14 @@ public class Bookform extends  GenericServlet {
         String lnameInfo = " , last name " + ( lnameVal.isEmpty() ? " - <u>any</u> " : " starts with \"" + lnameVal + "\"");
                 
         pw.println("<table border='1' width='70%' >");
-        pw.println("<h3> Students that match selection parameters  : "+ fnameInfo + lnameInfo +" </h3>");
-        pw.println("<tr><th>First name </th><th>Last name </th></tr>");
+        pw.println("<h3> Books s that match selection parameters  : "+ fnameInfo + lnameInfo +" </h3>");
+        pw.println("<tr><th>Author name </th><th>Last name </th></tr>");
         
         readFromDB(connectionURL, fnameVal, lnameVal, pw);
         pw.println("</table>");
+        pw.println("<footer  <hr/>");
+          pw.println("<i> Author:" + initAuthorvalue + "</i>");
+        pw.println("</footer>");
     }
     
     private void readFromDB(String connectionURL, String fnameVal, String lnameVal, PrintWriter pw) {

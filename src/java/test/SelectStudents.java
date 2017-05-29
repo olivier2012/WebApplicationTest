@@ -16,6 +16,7 @@ public class SelectStudents extends  GenericServlet {
         PrintWriter pw = resp.getWriter();
         
         String connectionURL = getServletContext().getInitParameter("connect_string");
+          String initAuthorvalue = getServletContext().getInitParameter("author");
         String fnameVal = req.getParameter("fname");
         String lnameVal = req.getParameter("lname");
         fnameVal =  returnEmptyIfNull(fnameVal);
@@ -29,6 +30,10 @@ public class SelectStudents extends  GenericServlet {
         
         readFromDB(connectionURL, fnameVal, lnameVal, pw);
         pw.println("</table>");
+                pw.println("</table>");
+        pw.println("<footer  <hr/>");
+          pw.println("<i> Author:" + initAuthorvalue + "</i>");
+        pw.println("</footer>");
     }
     
     private void readFromDB(String connectionURL, String fnameVal, String lnameVal, PrintWriter pw) {
