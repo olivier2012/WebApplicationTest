@@ -193,9 +193,9 @@
         <servlet-name>urlTest</servlet-name>
         <url-pattern>/uptest/*</url-pattern>
         <url-pattern>/uptest/b/*</url-pattern>
-        <!-- -->
+        <!-- 
         <url-pattern>*.do</url-pattern>
-        <url-pattern>/</url-pattern> <!-- -->
+        <url-pattern>/</url-pattern>  -->
     </servlet-mapping>
     
     
@@ -209,6 +209,15 @@
         <url-pattern>/Http_pagecalc</url-pattern>
     </servlet-mapping>
     
-    Http_pagecalc
+    <servlet>
+        <servlet-name>Http_pagecalc1</servlet-name>
+        <servlet-class>test.Http_pagecalc1</servlet-class>
+    </servlet>
+    
+    <servlet-mapping>
+        <servlet-name>Http_pagecalc1</servlet-name>
+        <url-pattern>/Http_pagecalc1/*</url-pattern>
+        <url-pattern>/</url-pattern>
+    </servlet-mapping>   
 
 </web-app>
