@@ -1,15 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<web-app version="3.1" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd">
+<web-app version="3.1" xmlns="http://xmlns.jcp.org/xml/ns/javaee" 
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+         xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd" >
     <context-param>
         <param-name>connect_string</param-name>
         <param-value>jdbc:oracle:thin:hr/oracle@localhost:1521/XE</param-value>
     </context-param>
     
-        <context-param>
+    <context-param>
         <param-name>author</param-name>
         <param-value>John Doe</param-value>
-        </context-param>
-        
+    </context-param>
     <servlet>
         <servlet-name>test</servlet-name>
         <servlet-class>test.PageOne</servlet-class>
@@ -162,16 +163,15 @@
         <servlet-name>SelectStudents</servlet-name>
         <url-pattern>/selStudents</url-pattern>
     </servlet-mapping>
-  
-     <servlet>
+    <servlet>
         <servlet-name>Bookform</servlet-name>
         <servlet-class>test.Bookform</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>Bookform</servlet-name>
         <url-pattern>/bookform</url-pattern>
-    </servlet-mapping>  
-        <servlet>
+    </servlet-mapping>
+    <servlet>
         <servlet-name>Bookform4</servlet-name>
         <servlet-class>test.Bookform4</servlet-class>
     </servlet>
@@ -182,13 +182,11 @@
         <url-pattern>/</url-pattern>  
         -->
     </servlet-mapping>
-    
     <!-- elements for test.URL_Test_Page servlet  -->
     <servlet>
         <servlet-name>urlTest</servlet-name>
         <servlet-class>test.URL_Test_Page</servlet-class>
     </servlet>
-    
     <servlet-mapping>
         <servlet-name>urlTest</servlet-name>
         <url-pattern>/uptest/*</url-pattern>
@@ -197,27 +195,35 @@
         <url-pattern>*.do</url-pattern>
         <url-pattern>/</url-pattern>  -->
     </servlet-mapping>
-    
-    
     <servlet>
         <servlet-name>Http_pagecalc</servlet-name>
         <servlet-class>test.Http_pagecalc</servlet-class>
     </servlet>
-    
     <servlet-mapping>
         <servlet-name>Http_pagecalc</servlet-name>
         <url-pattern>/Http_pagecalc</url-pattern>
     </servlet-mapping>
-    
     <servlet>
         <servlet-name>Http_pagecalc1</servlet-name>
         <servlet-class>test.Http_pagecalc1</servlet-class>
     </servlet>
-    
     <servlet-mapping>
         <servlet-name>Http_pagecalc1</servlet-name>
         <url-pattern>/Http_pagecalc1/*</url-pattern>
         <url-pattern>/</url-pattern>
-    </servlet-mapping>   
-
+    </servlet-mapping>
+  
+    
+     <servlet>
+        <servlet-name>FlexibleFormPage</servlet-name>
+        <servlet-class>test.FlexibleFormPage</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>FlexibleFormPage</servlet-name>
+        <url-pattern>/flexForm</url-pattern>
+    </servlet-mapping>
+    
+  
+    
+    
 </web-app>
