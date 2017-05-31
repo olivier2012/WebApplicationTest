@@ -72,6 +72,51 @@
     <polygon points="0,0,  50,0,  0,50  "  fill="navy" />
     <polygon points="60,60,  60,10,  10,60  "  fill="navy" />
 </svg>
+<hr/>
+<h3> Flag of Saint Lucia </h3>
+<svg    height="60" width="60" >
+    <rect x="0" y="0" width="60" height="60" fill="#66ccff" /> 
+    <polygon points="0,0,  50,0,  0,50  "  fill="navy" />
+    <polygon points="60,60,  60,10,  10,60  "  fill="navy" />
+</svg>
+
+<hr>
+
+<canvas id="cnv" width="100" height="100" style="border: gold solid 2mm" > </canvas>
+<script>
+      var can = document.getElementById('cnv');
+      var cont = can.getContext('2d');      
+      cont.fillStyle = 'rgb(255, 0, 0)';
+      cont.fillRect(0, 0, 50, 50);      
+      cont.fillStyle = 'rgba(255, 0, 255, 0.5)';
+      cont.fillRect(20, 20, 50, 50);
+      cont.fillStyle = 'rgba(0, 255, 0, 0.1)';
+      cont.fillRect(60, 60, 40, 40);
+</script>
+
+<hr>
+<canvas id="canv" width="300" height="80" ></canvas>  <!-- Some browsers do not render canvas if only one tag is used-->
+<script>
+    var redCol = 0;	//variable declaration in JavaScript
+    var canvas = document.getElementById('canv');	//connect to <canvas> element
+    var cc = canvas.getContext('2d');//connect to context of canvas  
+    function addZero(x){   return  (x < 10) ?   "0" + x : x; }  //  JavaScript function
+    
+    function func(){  			//  JavaScript function that is called by timer each 1 second == 1000 msec     
+       cc.clearRect(0, 0,  300, 300);	//clear canvas
+       cc.font = '30pt Arial';
+       var dt = new Date( );
+       var sec = dt.getSeconds();
+       var min = dt.getMinutes();
+       var hr = dt.getHours();
+       cc.fillStyle = 'rgb(' + redCol + ', 0, 0)';
+       cc.fillText(addZero(hr) + ":" + addZero(min) + ":" + addZero(sec), 10, 50);	//write text
+       redCol += 4.25;
+       if (redCol >= 256)   
+	   redCol = 0;
+    }
+    setInterval(func, 1000);	//set and start timer
+</script>
 
 </body>   
 

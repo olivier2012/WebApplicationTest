@@ -35,9 +35,6 @@ public class Http_pagecalc1 extends HttpServlet  {
             pw.print("<p><i>Not enough data or more datas !<i></p>");
         
         }
-         String bgcol = "white" ;
-       String forecolor =  "black";
-       pw.println("<body style='background-color:" + bgcol + "; color: " + forecolor + ";'>");
       if (option.equals("plus"))
       {pw.println("you input " + firPar + "  " +option + "  " + secPar + "  result : " + (firPar+secPar) );}
       else if (option.equals("min")){
@@ -45,7 +42,10 @@ public class Http_pagecalc1 extends HttpServlet  {
       else if(option.equals("pro")){
           pw.println("you input " + firPar + "  " +option + "  " + secPar + "  result : " + (firPar*secPar) );} 
       else if (option.equals("div")){
-          pw.println("you input " + firPar + "  " +option + "  " + secPar + "  result : " +((double)firPar/secPar) );
+          if(secPar !=0){
+          pw.println("you input " + firPar + "  " +option + "  " + secPar + "  result : " +((double)firPar/secPar) ); }
+          else {pw.println(" you use the div ,  the secPar should not be Zero ! ");}
+          
       }  
       
         } catch(Exception e){
