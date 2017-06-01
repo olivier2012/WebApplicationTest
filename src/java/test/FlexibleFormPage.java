@@ -31,29 +31,36 @@ public class FlexibleFormPage extends HttpServlet  {
         String connectionURL = getServletContext().getInitParameter("connect_string");
         String fnameVal = req.getParameter("fname");
         String lnameVal = req.getParameter("lname");
+        String acourse = req.getParameter("course");
         fnameVal =  returnEmptyIfNull(fnameVal);
         lnameVal =  returnEmptyIfNull(lnameVal);
-//        String fnameInfo = " first name " + ( fnameVal.isEmpty() ? " - <u>any</u> " : " starts with \"" + fnameVal + "\"");
-//        String lnameInfo = " , last name " + ( lnameVal.isEmpty() ? " - <u>any</u> " : " starts with \"" + lnameVal + "\"");
+        acourse =  returnEmptyIfNull(acourse);
         
         PrintWriter pw = resp.getWriter();
         try{
-        pw.println("<form >"); 
+        pw.println("<form action='/WebApplicationTest/selectGrades' method='get'>"); 
         pw.println("<table border='1' width='70%' >");
         pw.println("<h3> Selection parameters  :  </h3>");
-        pw.println("<tr><th>First name </th><th>Last name </th></tr>");
+        pw.println("<tr><th>First name </th><th>Last name </th><th>Course </th></tr>");
         
-          pw.println("<tr><td> <select> ");
+          pw.println("<tr><td> <select name='fname' ><option> --- </option> ");
         readFromDBFname(connectionURL,  pw);        
          pw.println("</select></td>   ");
         
-        pw.println("<td> <select> ");
+        pw.println("<td> <select name='lname'> <option>--- </option>");
         readFromDBLname(connectionURL,  pw);        
+         pw.println("</select></td>  ");
+         
+        pw.println("<td> <select name='course'> <option>--- </option>");
+        readFromDBCourse(connectionURL,  pw);        
          pw.println("</select></td> </tr>  ");
-         
-        
-         
-        pw.println("</table>");
+          pw.println("</table>");
+           pw.println("<br/><hr>");
+        pw.println("Input two Grade values : <br/><br/>");
+        pw.print("<label>The Grade from  </label><input type='text' name='fvalue' value='60' />");
+        pw.println("<label>  To  </label><input type='text' name='lvalue' value='100' /><br/><br/>");
+        pw.println("<input type='submit'  value='send'>"); 
+       
         pw.println("</form >"); 
 
         }
@@ -99,6 +106,21 @@ public class FlexibleFormPage extends HttpServlet  {
         }
     }
     
+        private void readFromDBCourse(String connectionURL, PrintWriter pw) {
+        try 
+        (
+            Connection con = DriverManager.getConnection(connectionURL);
+            Statement stmt = con.createStatement();
+        )
+        {  ResultSet rs =  stmt.executeQuery("SELECT  DISTINCT Course FROM T_Course ");
+            while( rs != null  &&  rs.next(  )  ){
+                   pw.println("<option>" + rs.getString("course") + "</option>");
+            }
+        }
+        catch(Exception e){
+		pw.println("<tr><td colspan='2'>An error \"" +  e.getMessage() +  "\" during DB reading</td></tr>"); 
+        }
+    }
     private String returnEmptyIfNull(String inp) { return inp == null ? "" : inp;} 	//simple  function 
 }// class
 

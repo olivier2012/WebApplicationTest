@@ -223,7 +223,14 @@
         <url-pattern>/flexForm</url-pattern>
     </servlet-mapping>
     
-  
+    <servlet>
+        <servlet-name>SelectGradesPage</servlet-name>
+        <servlet-class>test.SelectGradesPage</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>SelectGradesPage</servlet-name>
+        <url-pattern>/selectGrades</url-pattern>
+    </servlet-mapping>
     
     
 </web-app>

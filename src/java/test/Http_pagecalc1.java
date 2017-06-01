@@ -43,7 +43,9 @@ public class Http_pagecalc1 extends HttpServlet  {
           pw.println("you input " + firPar + "  " +option + "  " + secPar + "  result : " + (firPar*secPar) );} 
       else if (option.equals("div")){
           if(secPar !=0){
-          pw.println("you input " + firPar + "  " +option + "  " + secPar + "  result : " +((double)firPar/secPar) ); }
+          pw.print("you input " + firPar + "  " +option + "  " + secPar + "  result : ");
+          pw.println( String.format("%,.2f",(double)(firPar/secPar)));
+          }
           else {pw.println(" you use the div ,  the secPar should not be Zero ! ");}
           
       }  
